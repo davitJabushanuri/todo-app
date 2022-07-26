@@ -4,7 +4,7 @@ interface Connection {
   isConnected?: boolean
 }
 
-const MONGO_URI: any = process.env.MONGO_URI
+const MONGO_URI = process.env.MONGO_URI as string
 
 const connection: Connection = {}
 
@@ -16,8 +16,6 @@ const mongoConnect = async () => {
   const db: any = await mongoose.connect(MONGO_URI)
 
   connection.isConnected = db.connections[0].readyState
-
-  console.log(connection)
 }
 
 export default mongoConnect

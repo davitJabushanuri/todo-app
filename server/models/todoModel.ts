@@ -11,7 +11,7 @@ const todoSchema = new mongoose.Schema({
   description: {
     type: String,
     required: [true, 'Please add a description'],
-    maxlength: [500, 'Description cannot be more than 500 characters'],
+    maxlength: [200, 'Description cannot be more than 200 characters'],
   },
   completed: {
     type: Boolean,
@@ -24,10 +24,6 @@ const todoSchema = new mongoose.Schema({
   updatedAt: {
     type: Date,
     default: Date.now,
-  },
-  id: {
-    type: String,
-    default: mongoose.Types.ObjectId,
   },
 })
 
