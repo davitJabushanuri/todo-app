@@ -1,4 +1,5 @@
 import { GetServerSideProps } from 'next'
+import Header from '../components/header/Header'
 import Tasks from '../components/tasks/Tasks'
 import styles from '../styles/Home.module.scss'
 
@@ -10,8 +11,10 @@ const HomePage: React.FC<TasksProps> = ({ tasks }) => {
   console.log(tasks)
   return (
     <div className={styles.container}>
-      <h1>Tasks</h1>
-      <Tasks tasks={tasks} />
+      <main>
+        <Header tasks={tasks} />
+        <Tasks tasks={tasks} />
+      </main>
     </div>
   )
 }

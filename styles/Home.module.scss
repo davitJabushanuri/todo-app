@@ -1,4 +1,11 @@
 .container {
   background-color: #f6f6f6;
   min-height: 100vh;
+
+  main {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+    padding-top: 4rem;
+  }
 }
