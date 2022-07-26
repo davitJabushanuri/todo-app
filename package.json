@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-template",
+  "name": "todo-app",
   "version": "0.1.0",
   "private": true,
   "engines": {
@@ -13,11 +13,10 @@
     "start": "next start",
     "lint": "next lint",
     "prettier": "prettier --write .",
-    "prepare": "husky install",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "prepare": "husky install"
   },
   "dependencies": {
+    "mongoose": "^6.4.6",
     "next": "12.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -27,14 +26,6 @@
     "@babel/core": "^7.18.6",
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
-    "@storybook/addon-actions": "^6.5.9",
-    "@storybook/addon-essentials": "^6.5.9",
-    "@storybook/addon-interactions": "^6.5.9",
-    "@storybook/addon-links": "^6.5.9",
-    "@storybook/builder-webpack5": "^6.5.9",
-    "@storybook/manager-webpack5": "^6.5.9",
-    "@storybook/react": "^6.5.9",
-    "@storybook/testing-library": "^0.0.13",
     "@types/node": "18.0.3",
     "@types/react": "18.0.15",
     "@types/react-dom": "18.0.6",
