@@ -57,7 +57,10 @@ const Task: React.FC<TaskProps> = ({ id, title, description, completed }) => {
         <h2>{title}</h2>
         <p>{description}</p>
         <div className={styles.actions}>
-          <button className={styles.edit}>
+          <button
+            onClick={() => router.push(`/edit/${id}`)}
+            className={styles.edit}
+          >
             <Image src={editIcon} alt="edit" width={`16px`} height={`16px`} />
           </button>
           <button onClick={() => deleteCard(id)} className={styles.delete}>
