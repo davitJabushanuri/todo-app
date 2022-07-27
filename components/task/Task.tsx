@@ -15,9 +15,9 @@ export interface TaskProps {
 const Task: React.FC<TaskProps> = ({ id, title, description, completed }) => {
   const router = useRouter()
 
-  const deleteCard = (id: string) => {
+  const deleteCard = async (id: string) => {
     try {
-      fetch(`http://localhost:3000/api/tasks/${id}`, {
+      await fetch(`http://localhost:3000/api/tasks/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -29,9 +29,9 @@ const Task: React.FC<TaskProps> = ({ id, title, description, completed }) => {
     }
   }
 
-  const handleCheckbox = (id: string) => {
+  const handleCheckbox = async (id: string) => {
     try {
-      fetch(`http://localhost:3000/api/tasks/${id}`, {
+      await fetch(`http://localhost:3000/api/tasks/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

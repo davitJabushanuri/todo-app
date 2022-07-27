@@ -15,7 +15,7 @@ export default async function todosHandler(
   switch (method) {
     case 'GET':
       try {
-        const todos = await Todo.find()
+        const todos = await Todo.find().sort({ createdAt: -1 })
         return res.status(200).json(todos)
       } catch (err: any) {
         console.error(err)
