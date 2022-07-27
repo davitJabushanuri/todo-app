@@ -19,7 +19,7 @@ const HomePage: React.FC<TasksProps> = ({ tasks }) => {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const data = await fetch('http://localhost:3000/api/todos')
+  const data = await fetch('https://todo-app-rust-nu.vercel.app/api/tasks')
   const tasks = await data.json()
 
   return {

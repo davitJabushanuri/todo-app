@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import styles from './Task.module.scss'
 
 import editIcon from '../../public/pen-solid.svg'
@@ -12,6 +13,22 @@ export interface TaskProps {
 }
 
 const Task: React.FC<TaskProps> = ({ id, title, description, completed }) => {
+  const router = useRouter()
+
+  const deleteCard = (id: string) => {
+    try {
+      fetch(`https://todo-app-rust-nu.vercel.app/api/tasks/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+      router.push('/')
+    } catch (e) {
+      console.log(e)
+    }
+  }
+
   return (
     <div id={id} className={styles.container}>
       <div className={styles.checkbox}>
@@ -24,7 +41,7 @@ const Task: React.FC<TaskProps> = ({ id, title, description, completed }) => {
           <button className={styles.edit}>
             <Image src={editIcon} alt="edit" width={`16px`} height={`16px`} />
           </button>
-          <button className={styles.delete}>
+          <button onClick={() => deleteCard(id)} className={styles.delete}>
             <Image src={deleteIcon} alt="edit" width={`16px`} height={`16px`} />
           </button>
         </div>
