@@ -1,5 +1,8 @@
-import { useRouter } from 'next/router'
+import Image from 'next/image'
 import styles from './Task.module.scss'
+
+import editIcon from '../../public/pen-solid.svg'
+import deleteIcon from '../../public/trash-solid.svg'
 
 export interface TaskProps {
   id: string
@@ -9,12 +12,23 @@ export interface TaskProps {
 }
 
 const Task: React.FC<TaskProps> = ({ id, title, description, completed }) => {
-  const router = useRouter()
   return (
-    <div onClick={() => router.push(`/${id}`)} className={styles.container}>
-      <h2>{title}</h2>
-      <p>{description}</p>
-      <p>{completed ? 'Completed' : 'Not Completed'}</p>
+    <div id={id} className={styles.container}>
+      <div className={styles.checkbox}>
+        <input type="checkbox" checked={completed} />
+      </div>
+      <div className={styles.content}>
+        <h2>{title}</h2>
+        <p>{description}</p>
+        <div className={styles.actions}>
+          <button className={styles.edit}>
+            <Image src={editIcon} alt="edit" width={`16px`} height={`16px`} />
+          </button>
+          <button className={styles.delete}>
+            <Image src={deleteIcon} alt="edit" width={`16px`} height={`16px`} />
+          </button>
+        </div>
+      </div>
     </div>
   )
 }

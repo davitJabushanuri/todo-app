@@ -3,4 +3,47 @@
   padding: 0.8rem 1rem;
   border-radius: 0.4rem;
   box-shadow: rgba(129, 129, 129, 0.1) 0px 4px 12px;
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 1rem;
+  align-items: flex-start;
+
+  .checkbox {
+    input {
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+
+    p {
+      font-size: 1rem;
+      color: rgb(88, 88, 88);
+    }
+
+    .actions {
+      display: flex;
+      justify-content: flex-end;
+
+      button {
+        background: transparent;
+        border: 1px solid #ccc;
+        border-radius: 0.4rem;
+        padding: 0.4rem;
+        margin-left: 1rem;
+        cursor: pointer;
+      }
+    }
+  }
 }

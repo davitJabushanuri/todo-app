@@ -4,7 +4,7 @@ interface Connection {
   isConnected?: boolean
 }
 
-const MONGO_URI = process.env.MONGO_URI as string
+const MONGO_URI: any = process.env.MONGO_URI
 
 const connection: Connection = {}
 

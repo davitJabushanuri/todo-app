@@ -8,7 +8,6 @@ export interface TasksProps {
 }
 
 const HomePage: React.FC<TasksProps> = ({ tasks }) => {
-  console.log(tasks)
   return (
     <div className={styles.container}>
       <main>
