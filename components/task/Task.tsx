@@ -17,7 +17,7 @@ const Task: React.FC<TaskProps> = ({ id, title, description, completed }) => {
 
   const deleteCard = (id: string) => {
     try {
-      fetch(`https://todo-app-rust-nu.vercel.app/api/tasks/${id}`, {
+      fetch(`http://localhost:3000/api/tasks/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -29,10 +29,29 @@ const Task: React.FC<TaskProps> = ({ id, title, description, completed }) => {
     }
   }
 
+  const handleCheckbox = (id: string) => {
+    try {
+      fetch(`http://localhost:3000/api/tasks/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ completed: !completed }),
+      })
+      router.push('/')
+    } catch (e) {
+      console.log(e)
+    }
+  }
+
   return (
     <div id={id} className={styles.container}>
       <div className={styles.checkbox}>
-        <input type="checkbox" checked={completed} />
+        <input
+          onChange={() => handleCheckbox(id)}
+          type="checkbox"
+          checked={completed}
+        />
       </div>
       <div className={styles.content}>
         <h2>{title}</h2>
