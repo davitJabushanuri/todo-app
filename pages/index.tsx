@@ -1,4 +1,4 @@
-import { GetServerSideProps } from 'next'
+import { GetServerSideProps, NextPage } from 'next'
 import Link from 'next/link'
 import Header from '../components/header/Header'
 import Tasks from '../components/tasks/Tasks'
@@ -8,7 +8,7 @@ export interface TasksProps {
   tasks: []
 }
 
-const HomePage: React.FC<TasksProps> = ({ tasks }) => {
+const HomePage: NextPage<TasksProps> = ({ tasks }) => {
   return (
     <div className={styles.container}>
       <main>
@@ -25,7 +25,7 @@ const HomePage: React.FC<TasksProps> = ({ tasks }) => {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const data = await fetch('https://todo-app-rust-nu.vercel.app/api/tasks')
+  const data = await fetch(`${process.env.NEXT_PUBLIC_URl}/api/tasks`)
   const tasks = await data.json()
 
   return {

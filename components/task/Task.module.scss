@@ -1,48 +1,50 @@
 .container {
   background-color: #fff;
-  padding: 0.8rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 0.4rem;
   box-shadow: rgba(129, 129, 129, 0.1) 0px 4px 12px;
-  display: grid;
-  grid-template-columns: 20px 1fr;
-  gap: 1rem;
-  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
 
-  .checkbox {
-    input {
-      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-      width: 16px;
-      height: 16px;
-      cursor: pointer;
-    }
+  p {
+    font-size: 1rem;
+    color: #6b6b6b;
+    margin: 1rem;
+    margin-left: 1.8rem;
   }
 
-  .content {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
+  .main {
+    display: grid;
+    grid-template-columns: 16px 1fr 60px;
+    align-items: center;
+    gap: 1rem;
+
+    .checkbox {
+      input {
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+      }
+    }
 
     h2 {
       font-size: 1.4rem;
       font-weight: 500;
       color: #1a1a1a;
-    }
-
-    p {
-      font-size: 1rem;
-      color: #6b6b6b;
+      cursor: pointer;
     }
 
     .actions {
+      margin-left: auto;
       display: flex;
-      justify-content: flex-end;
-
+      align-items: center;
+      gap: 0.4rem;
       button {
         background: transparent;
         border: 1px solid #ccc;
         border-radius: 0.4rem;
         padding: 0.4rem;
-        margin-left: 1rem;
         cursor: pointer;
       }
     }

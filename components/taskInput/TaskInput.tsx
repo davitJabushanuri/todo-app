@@ -17,7 +17,7 @@ const TaskInput: React.FC<TasksProps> = () => {
 
   const createTask = async () => {
     try {
-      await fetch('http://localhost:3000/api/tasks', {
+      await fetch(`${process.env.NEXT_PUBLIC_URL}/api/tasks`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

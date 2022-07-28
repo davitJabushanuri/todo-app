@@ -17,6 +17,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@formkit/auto-animate": "^1.0.0-beta.1",
     "mongoose": "^6.4.6",
     "next": "12.2.0",
     "react": "18.2.0",

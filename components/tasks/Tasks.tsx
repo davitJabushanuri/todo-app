@@ -1,3 +1,4 @@
+import { useAutoAnimate } from '@formkit/auto-animate/react'
 import Task from '../task/Task'
 import styles from './Tasks.module.scss'
 
@@ -6,8 +7,9 @@ export interface TasksProps {
 }
 
 const Tasks: React.FC<TasksProps> = ({ tasks }) => {
+  const [parent] = useAutoAnimate<HTMLDivElement>(/* optional config */)
   return (
-    <div className={styles.container}>
+    <div ref={parent} className={styles.container}>
       {tasks.map((task: any) => {
         return (
           <Task
