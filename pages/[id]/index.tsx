@@ -1,6 +1,8 @@
 import { GetServerSideProps, NextPage } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
+import backIcon from '../../public/arrow-left-long-solid.svg'
 import styles from './TaskPage.module.scss'
 
 import { useRouter } from 'next/router'
@@ -36,11 +38,19 @@ const HomePage: NextPage<TasksProps> = ({ task }) => {
   }
 
   return (
-    <div>
+    <div className={styles.container}>
       <main>
         <button className={styles.back}>
           <Link href="/">
-            <a>Back</a>
+            <a>
+              <Image
+                src={backIcon}
+                alt="back-icon"
+                width="12px"
+                height="12px"
+              />
+              <span>Back</span>
+            </a>
           </Link>
         </button>
         <form>
@@ -53,17 +63,31 @@ const HomePage: NextPage<TasksProps> = ({ task }) => {
             name="title"
             placeholder="Title"
           />
-          <input
+          <textarea
             value={newTask.description}
             onChange={(e) => {
               setNewTask({ ...newTask, description: e.target.value })
             }}
-            type="text"
             name="description"
           />
-          <button onClick={editTask} type="button">
-            Edit
-          </button>
+
+          <div className={styles.actions}>
+            <button
+              onClick={() => router.push('/')}
+              type="button"
+              className={styles.cancel}
+            >
+              Cancel
+            </button>
+            <button
+              onClick={editTask}
+              disabled={task === newTask}
+              type="button"
+              className={styles.submit}
+            >
+              Edit task
+            </button>
+          </div>
         </form>
       </main>
     </div>

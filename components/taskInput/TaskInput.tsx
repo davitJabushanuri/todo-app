@@ -59,7 +59,12 @@ const TaskInput: React.FC<TasksProps> = ({ setShow }) => {
         <button type="button" onClick={cancelTask} className={styles.cancel}>
           Cancel
         </button>
-        <button type="button" onClick={createTask} className={styles.submit}>
+        <button
+          disabled={task.title === '' || task.description === ''}
+          type="button"
+          onClick={createTask}
+          className={styles.submit}
+        >
           Create task
         </button>
       </div>
