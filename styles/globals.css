@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
 html,
 body,
 div,
@@ -121,4 +123,8 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
 }

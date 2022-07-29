@@ -66,7 +66,15 @@ const Task: React.FC<TaskProps> = ({ id, title, description, completed }) => {
             checked={completed}
           />
         </div>
-        <h2 onClick={reveal}>{title}</h2>
+        <h2
+          onClick={reveal}
+          style={{
+            textDecoration: completed ? 'line-through' : 'none',
+            opacity: completed ? 0.5 : 1,
+          }}
+        >
+          {title}
+        </h2>
         <div className={styles.actions}>
           <button onClick={() => router.push(`/${id}`)} className={styles.edit}>
             <Image src={editIcon} alt="edit" width={`12px`} height={`12px`} />
