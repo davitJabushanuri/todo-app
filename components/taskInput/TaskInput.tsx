@@ -46,7 +46,7 @@ const TaskInput: React.FC<TasksProps> = ({ setShow }) => {
         onChange={(e) => setTask({ ...task, title: e.target.value })}
         type="text"
         name="title"
-        placeholder="Add a task"
+        placeholder="Title"
       />
 
       <textarea
