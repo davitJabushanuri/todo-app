@@ -7,24 +7,5 @@
     margin: 0 auto;
     padding: 1rem;
     padding-top: 4rem;
-
-    .addTask {
-      margin: 1rem 0;
-      width: 100%;
-      padding: 0.8rem;
-      font-weight: bold;
-      border-radius: 0.4rem;
-      box-shadow: rgba(129, 129, 129, 0.1) 0px 4px 12px;
-      border: none;
-      color: #fff;
-      background-color: #003865;
-      font-size: 1rem;
-      cursor: pointer;
-
-      .addTask__link__anchor {
-        color: inherit;
-        text-decoration: none;
-      }
-    }
   }
 }

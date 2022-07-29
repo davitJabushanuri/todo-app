@@ -1,5 +1,4 @@
 import { GetServerSideProps, NextPage } from 'next'
-import Link from 'next/link'
 import Header from '../components/header/Header'
 import Tasks from '../components/tasks/Tasks'
 import styles from '../styles/Home.module.scss'
@@ -13,11 +12,7 @@ const HomePage: NextPage<TasksProps> = ({ tasks }) => {
     <div className={styles.container}>
       <main>
         <Header tasks={tasks} />
-        <button className={styles.addTask}>
-          <Link className={styles.addTask__link} href={`/add-task`}>
-            <a className={styles.addTask__link__anchor}>Add a new task</a>
-          </Link>
-        </button>
+
         <Tasks tasks={tasks} />
       </main>
     </div>

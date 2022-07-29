@@ -2,9 +2,11 @@ import { useRouter } from 'next/router'
 import { useState } from 'react'
 import styles from './TaskInput.module.scss'
 
-export interface TasksProps {}
+export interface TasksProps {
+  setShow: any
+}
 
-const TaskInput: React.FC<TasksProps> = () => {
+const TaskInput: React.FC<TasksProps> = ({ setShow }) => {
   const [task, setTask] = useState({
     title: '',
     description: '',
@@ -12,7 +14,7 @@ const TaskInput: React.FC<TasksProps> = () => {
   const router = useRouter()
 
   const cancelTask = () => {
-    router.push('/')
+    setShow(false)
   }
 
   const createTask = async () => {
@@ -23,6 +25,13 @@ const TaskInput: React.FC<TasksProps> = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(task),
+      })
+      setTimeout(() => {
+        setShow(false)
+      }, 1000)
+      setTask({
+        title: '',
+        description: '',
       })
       router.push('/')
     } catch (error) {
