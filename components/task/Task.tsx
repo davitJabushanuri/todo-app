@@ -15,7 +15,6 @@ export interface TaskProps {
 }
 
 const Task: React.FC<TaskProps> = ({ id, title, description, completed }) => {
-  const URL: any = process.env.NEXT_PUBLIC_URL
   const router = useRouter()
 
   const [show, setShow] = useState(false)
@@ -29,7 +28,7 @@ const Task: React.FC<TaskProps> = ({ id, title, description, completed }) => {
 
   const deleteCard = async (id: string) => {
     try {
-      await fetch(`${URL}/api/tasks/${id}`, {
+      await fetch(`https://todo-app-rust-nu.vercel.app/api/tasks/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -43,7 +42,7 @@ const Task: React.FC<TaskProps> = ({ id, title, description, completed }) => {
 
   const handleCheckbox = async (id: string) => {
     try {
-      await fetch(`${URL}/api/tasks/${id}`, {
+      await fetch(`https://todo-app-rust-nu.vercel.app/api/tasks/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

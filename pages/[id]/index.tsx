@@ -16,21 +16,22 @@ export interface TasksProps {
   }
 }
 
-const URL = process.env.NEXT_PUBLIC_URL
-
 const HomePage: NextPage<TasksProps> = ({ task }) => {
   const [newTask, setNewTask] = useState(task)
   const router = useRouter()
 
   const editTask = async () => {
     try {
-      await fetch(`${URL}/api/tasks/${newTask._id}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(newTask),
-      })
+      await fetch(
+        `https://todo-app-rust-nu.vercel.app/api/tasks/${newTask._id}`,
+        {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(newTask),
+        }
+      )
       router.push('/')
     } catch (e) {
       console.log(e)
@@ -96,7 +97,9 @@ const HomePage: NextPage<TasksProps> = ({ task }) => {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { id } = context.query
-  const data = await fetch(`${process.env.NEXT_PUBLIC_URl}/api/tasks/${id}`)
+  const data = await fetch(
+    `https://todo-app-rust-nu.vercel.app/api/tasks/${id}`
+  )
   const task = await data.json()
 
   return {

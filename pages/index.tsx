@@ -20,7 +20,7 @@ const HomePage: NextPage<TasksProps> = ({ tasks }) => {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const data = await fetch(`${process.env.NEXT_PUBLIC_URl}/api/tasks`)
+  const data = await fetch(`https://todo-app-rust-nu.vercel.app/api/tasks`)
   const tasks = await data.json()
 
   return {

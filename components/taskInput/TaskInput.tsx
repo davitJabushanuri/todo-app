@@ -15,7 +15,7 @@ const TaskInput: React.FC = () => {
 
   const createTask = async () => {
     try {
-      await fetch(`${process.env.NEXT_PUBLIC_URL}/api/tasks`, {
+      await fetch(`https://todo-app-rust-nu.vercel.app/api/tasks`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
