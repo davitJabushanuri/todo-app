@@ -5,15 +5,19 @@
 
   .addTask {
     background-color: transparent;
-    padding: 0;
+    padding: 0.6rem 1rem;
     width: 100%;
     font-weight: bold;
     border: none;
     font-size: 1rem;
     cursor: pointer;
+    background-color: #53bf9d;
+    color: white;
+    border-radius: 0.6rem;
 
-    p {
-      margin-bottom: 0.4rem;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
   }
 }
