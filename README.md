@@ -1,8 +1,8 @@
-# Nextjs template
+# todo app
 
 ## :beginner: Overview
 
-[View demo](https://davitjabushanuri.github.io/nextjs-template/)
+[View demo](https://todo-app-rust-nu.vercel.app/)
 
 ## :camera:
 
@@ -10,32 +10,32 @@
 
 ## :zap: Usage
 
-### :notebook: Pre-Requisites
+Users should be able to:
 
-To get a local copy up and running follow these simple example steps.
-
-- [git](https://git-scm.com/)
-- [NodeJS](https://nodejs.dev/)
-- [npm](https://npmjscom/)
-
-### :electric_plug: Installation
-
-After you've made sure to have all the tools installed, you should be able to just run a few commands to get set up
-
-```
-git clone git@github.com:davitJabushanuri/advice-generator.git
-cd advice-generator
-yarn install
-yarn start
-```
+- See a list of todos
+- Create a new todo
+- Update a todo
+- Delete a todo
+- Mark a todo as completed
+- Expand a todo to see its description
 
 ### :hammer: Built With
 
-- [NEXTJS](https://nextjs.org/)
+- [NEXT JS](https://nextjs.org/)
+- [MONGOOSE](https://mongoosejs.com/)
+- [MongoDB](https://www.mongodb.com/)
+- [Typescript](https://www.typescriptlang.org/)
+- [node.js](https://nodejs.org/)
+- [Vercel](https://vercel.com/)
 
 ### :house: Development
 
+- filter todos by status
+- add dark mode
+
 ## :star2: Acknowledgment
+
+[auto-animate.formkit.com](https://auto-animate.formkit.com/)
 
 ### 📝 License
 
